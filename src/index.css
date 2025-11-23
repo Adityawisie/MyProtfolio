@@ -112,6 +112,24 @@ All colors MUST be HSL.
   }
 }
 
+/* Neon Text Animation */
+@keyframes pulse-slow {
+  0%, 100% {
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.5),
+                 0 0 16px rgba(0, 255, 255, 0.4),
+                 0 0 24px rgba(0, 255, 255, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 4px rgba(0, 255, 255, 0.3),
+                 0 0 8px rgba(0, 255, 255, 0.2),
+                 0 0 12px rgba(0, 255, 255, 0.2);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+
 /* Noise Texture */
 @layer base {
   body::before {

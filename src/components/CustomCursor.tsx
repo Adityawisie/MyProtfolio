@@ -1,11 +1,33 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 
 const CustomCursor = () => {
   const dotRef = useRef<HTMLDivElement>(null);
   const ringRef = useRef<HTMLDivElement>(null);
+  const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
+    // Check if screen is desktop size
+    const checkScreenSize = () => {
+      const isDesktopSize = window.innerWidth >= 768;
+      setIsDesktop(isDesktopSize);
+    };
+
+    // Initial check
+    checkScreenSize();
+
+    // Add resize listener
+    window.addEventListener('resize', checkScreenSize);
+
+    return () => {
+      window.removeEventListener('resize', checkScreenSize);
+    };
+  }, []);
+
+  useEffect(() => {
+    // Early return if not desktop - don't attach any listeners
+    if (!isDesktop) return;
+
     const dot = dotRef.current;
     const ring = ringRef.current;
 
@@ -58,12 +80,15 @@ const CustomCursor = () => {
         el.removeEventListener('mouseleave', handleMouseLeave);
       });
     };
-  }, []);
+  }, [isDesktop]);
+
+  // Don't render cursor on mobile/tablet
+  if (!isDesktop) return null;
 
   return (
     <>
-      <div ref={dotRef} className="cursor-dot -translate-x-1/2 -translate-y-1/2" />
-      <div ref={ringRef} className="cursor-ring -translate-x-1/2 -translate-y-1/2" />
+      <div ref={dotRef} className="cursor-dot -translate-x-1/2 -translate-y-1/2 hidden md:block" />
+      <div ref={ringRef} className="cursor-ring -translate-x-1/2 -translate-y-1/2 hidden md:block" />
     </>
   );
 };

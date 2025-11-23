@@ -113,7 +113,7 @@ const Contact = () => {
 
         {/* Availability Note */}
         <div className="animate-element pt-8">
-          <p className="text-sm text-muted-foreground">
+          <p className="text-white font-light text-lg md:text-xl tracking-wide drop-shadow-[0_0_12px_rgba(0,255,255,0.45)] animate-pulse-slow">
             Currently open to new opportunities and collaborations
           </p>
         </div>
