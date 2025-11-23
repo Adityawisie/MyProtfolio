@@ -67,13 +67,8 @@ const Hero = () => {
     handleResize();
     mediaQuery.addEventListener('change', handleResize);
 
-    // Marquee animation
-    gsap.to(marqueeRef.current, {
-      x: "-50%",
-      duration: 20,
-      repeat: -1,
-      ease: "none"
-    });
+    // Marquee animation - now using CSS animation instead
+    // Removed GSAP animation to use CSS .animate-marquee class
 
     return () => {
       tl.kill();
@@ -111,13 +106,11 @@ const Hero = () => {
         </nav>
       </div>
 
-      {/* Marquee Text Behind Image - Hidden on mobile */}
-      <div className="hidden md:block absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden z-10">
-        <div ref={marqueeRef} className="whitespace-nowrap">
-          <span className="text-[12rem] md:text-[16rem] lg:text-[20rem] font-heading font-bold tracking-tight text-black/10 select-none">
-            ADITYA JAIN — ADITYA JAIN — 
-          </span>
-        </div>
+      {/* Marquee Text Behind Image - Now visible on mobile */}
+      <div className="absolute inset-0 z-0 flex items-center justify-center overflow-hidden pointer-events-none">
+        <span ref={marqueeRef} className="whitespace-nowrap leading-none opacity-20 animate-marquee text-[20vw] md:text-[12vw] font-heading font-bold tracking-tight text-black select-none">
+          ADITYA JAIN — ADITYA JAIN — ADITYA JAIN — ADITYA JAIN — 
+        </span>
       </div>
 
       {/* Main Content Container */}

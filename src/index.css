@@ -130,6 +130,20 @@ All colors MUST be HSL.
   animation: pulse-slow 3s ease-in-out infinite;
 }
 
+/* Marquee Animation */
+@keyframes move {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: move 18s linear infinite;
+}
+
 /* Noise Texture */
 @layer base {
   body::before {
