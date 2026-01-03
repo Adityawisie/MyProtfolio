@@ -1,12 +1,8 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-<<<<<<< HEAD
 import { ArrowUpRight, Github, ExternalLink, FileText } from 'lucide-react';
 import cellverseImg from '@/assets/Cellverse.png';
-=======
-import { ArrowUpRight, Github, ExternalLink } from 'lucide-react';
->>>>>>> 8676ce8ef5d993ddd0ab0c250fdcc91c7132a661
 import flappyBirdImg from '@/assets/flappy-bird.png';
 import shadowwoodLegendsImg from '@/assets/shadowwood-legends.png';
 
@@ -39,7 +35,6 @@ const Projects = () => {
 
   const projects = [
     {
-<<<<<<< HEAD
       title: "Cellverse",
       role: "Game Developer",
       tech: "Unity, C#, SpacetimeDB",
@@ -52,8 +47,6 @@ const Projects = () => {
       githubLink: null
     },
     {
-=======
->>>>>>> 8676ce8ef5d993ddd0ab0c250fdcc91c7132a661
       title: "Shadowwood Legends",
       role: "Game Developer",
       tech: "Unity, C#, RPG Systems",
@@ -109,7 +102,6 @@ const Projects = () => {
                 {/* Left - Title & Meta */}
                 <div className="lg:col-span-2 space-y-6">
                   <div className="flex items-start justify-between gap-4">
-<<<<<<< HEAD
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-3">
                         <p className="text-xs uppercase tracking-widest text-muted-foreground">
@@ -121,12 +113,6 @@ const Projects = () => {
                           </span>
                         )}
                       </div>
-=======
-                    <div>
-                      <p className="text-xs uppercase tracking-widest text-muted-foreground mb-3">
-                        {project.role} — {project.tech}
-                      </p>
->>>>>>> 8676ce8ef5d993ddd0ab0c250fdcc91c7132a661
                       <h3 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold tracking-tight group-hover:translate-x-2 transition-transform duration-500">
                         {project.title}
                       </h3>
@@ -153,7 +139,6 @@ const Projects = () => {
 
                   {/* Links */}
                   <div className="flex gap-3 pt-2">
-<<<<<<< HEAD
                     {project.gddLink ? (
                       <a
                         href={project.gddLink}
@@ -165,8 +150,6 @@ const Projects = () => {
                         View GDD
                       </a>
                     ) : null}
-=======
->>>>>>> 8676ce8ef5d993ddd0ab0c250fdcc91c7132a661
                     {project.githubLink && (
                       <a
                         href={project.githubLink}
@@ -178,11 +161,7 @@ const Projects = () => {
                         GitHub
                       </a>
                     )}
-<<<<<<< HEAD
                     {project.gameLink ? (
-=======
-                    {project.gameLink && (
->>>>>>> 8676ce8ef5d993ddd0ab0c250fdcc91c7132a661
                       <a
                         href={project.gameLink}
                         target="_blank"
@@ -192,7 +171,6 @@ const Projects = () => {
                         <ExternalLink className="w-4 h-4" />
                         Play Game
                       </a>
-<<<<<<< HEAD
                     ) : project.status === "In Progress" ? (
                       <button
                         disabled
@@ -202,9 +180,6 @@ const Projects = () => {
                         Coming Soon
                       </button>
                     ) : null}
-=======
-                    )}
->>>>>>> 8676ce8ef5d993ddd0ab0c250fdcc91c7132a661
                   </div>
                 </div>
 
@@ -212,15 +187,9 @@ const Projects = () => {
                 <div className="flex items-center justify-center lg:justify-end">
                   <div className="w-full max-w-xs aspect-square rounded-2xl border border-border overflow-hidden group-hover:border-foreground/20 transition-colors duration-500">
                     <img 
-<<<<<<< HEAD
                       src={idx === 0 ? cellverseImg : idx === 1 ? shadowwoodLegendsImg : flappyBirdImg}
                       alt={project.title}
                       className={`w-full h-full object-cover ${project.status === "In Progress" ? "opacity-75 grayscale-[15%]" : ""}`}
-=======
-                      src={idx === 0 ? shadowwoodLegendsImg : flappyBirdImg}
-                      alt={project.title}
-                      className="w-full h-full object-cover"
->>>>>>> 8676ce8ef5d993ddd0ab0c250fdcc91c7132a661
                     />
                   </div>
                 </div>
