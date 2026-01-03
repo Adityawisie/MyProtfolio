@@ -1,13 +1,26 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 
+<<<<<<< HEAD
 // Only 5 languages for faster loading
+=======
+>>>>>>> 8676ce8ef5d993ddd0ab0c250fdcc91c7132a661
 const greetings = [
   "Hello",
   "नमस्ते", 
   "こんにちは",
+<<<<<<< HEAD
   "Hola",
   "Bonjour"
+=======
+  "안녕하세요",
+  "Hola",
+  "Bonjour",
+  "Hallo",
+  "مرحبا",
+  "Ciao",
+  "Γειά σου"
+>>>>>>> 8676ce8ef5d993ddd0ab0c250fdcc91c7132a661
 ];
 
 interface PreloaderProps {
@@ -32,7 +45,11 @@ const Preloader = ({ onLoadComplete }: PreloaderProps) => {
       }
     });
 
+<<<<<<< HEAD
     // Animate greetings with yoyo and repeat - original smooth animation
+=======
+    // Animate greetings with yoyo and repeat
+>>>>>>> 8676ce8ef5d993ddd0ab0c250fdcc91c7132a661
     greetings.forEach((greeting) => {
       tl.to(greetingRef.current, {
         opacity: 1,
