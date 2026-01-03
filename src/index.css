@@ -1,0 +1,192 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Premium Dark Portfolio Design System */
+    --background: 0 0% 6%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 9%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 6%;
+
+    --secondary: 0 0% 9%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 55%;
+    --muted-foreground: 0 0% 55%;
+
+    --accent: 174 100% 13%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 14%;
+    --input: 0 0% 14%;
+    --ring: 174 100% 13%;
+
+    --radius: 1.75rem;
+
+    /* Custom portfolio tokens */
+    --panel: 0 0% 9%;
+    --hero-grey: 0 0% 65%;
+    --noise-opacity: 0.02;
+    --transition-smooth: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+/* Premium Typography */
+@layer base {
+  body {
+    @apply font-body;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Custom Cursor */
+@layer utilities {
+  .custom-cursor {
+    cursor: none;
+  }
+  
+  .cursor-dot {
+    width: 8px;
+    height: 8px;
+    background: hsl(var(--foreground));
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transition: transform 0.15s ease;
+  }
+  
+  .cursor-ring {
+    width: 40px;
+    height: 40px;
+    border: 1px solid hsl(var(--foreground) / 0.3);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998;
+    mix-blend-mode: difference;
+    transition: transform 0.2s ease;
+  }
+}
+
+/* Navbar Link Underline Animation */
+@layer components {
+  .nav-link {
+    position: relative;
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0%;
+    height: 1px;
+    background-color: currentColor;
+    transition: width 0.25s ease;
+  }
+  
+  .nav-link:hover::after {
+    width: 100%;
+  }
+}
+
+/* Neon Text Animation */
+@keyframes pulse-slow {
+  0%, 100% {
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.5),
+                 0 0 16px rgba(0, 255, 255, 0.4),
+                 0 0 24px rgba(0, 255, 255, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 4px rgba(0, 255, 255, 0.3),
+                 0 0 8px rgba(0, 255, 255, 0.2),
+                 0 0 12px rgba(0, 255, 255, 0.2);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+
+/* Marquee Animation */
+@keyframes move {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: move 18s linear infinite;
+}
+
+/* Noise Texture */
+@layer base {
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: var(--noise-opacity);
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' /%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1;
+  }
+}
+
+/* Smooth Scroll Container */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
