@@ -43,7 +43,11 @@ const About = () => {
     "C#",
     "Java",
     "C",
-    "Python"
+    "Python",
+    "HTML5",
+    "CSS3",
+    "JavaScript",
+    "SQL"
   ];
 
   const skillsAndTools = [
@@ -51,7 +55,8 @@ const About = () => {
     "Unity 3D",
     "Maya",
     "Blender",
-    "Unreal"
+    "Git",
+    "GitHub"
   ];
 
   return (

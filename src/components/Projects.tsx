@@ -39,7 +39,7 @@ const Projects = () => {
       role: "Game Developer",
       tech: "Unity, C#, SpacetimeDB",
       description: "A server-authoritative MMO arcade game inspired by .io mechanics, where hundreds to thousands of players coexist in a persistent world, growing by absorbing smaller entities while avoiding larger threats.",
-      year: "2024",
+      year: "2026",
       tags: ["Unity", "C#", "SpacetimeDB", "MMO"],
       status: "In Progress",
       gddLink: "/assets/GDD/CellverseGDD.pdf",
@@ -51,7 +51,7 @@ const Projects = () => {
       role: "Game Developer",
       tech: "Unity, C#, RPG Systems",
       description: "An action RPG featuring complex combat systems, inventory management, and quest mechanics. Built with modular architecture for extensibility and player immersion.",
-      year: "2024",
+      year: "2025",
       tags: ["Unity", "C#", "Game Design", "RPG"],
       githubLink: "https://github.com/Adityawisie/Shadowwood-Legends/tree/master",
       gameLink: "https://adityawisie.itch.io/shadowwood-legends"
@@ -61,7 +61,7 @@ const Projects = () => {
       role: "Game Developer",
       tech: "C#, Unity, Canvas",
       description: "A recreation of the classic Flappy Bird game with smooth physics, responsive controls, and polished UI. Focuses on tight gameplay mechanics and visual feedback.",
-      year: "2024",
+      year: "2025",
       tags: ["C#", "Unity", "Canvas", "2D"],
       githubLink: "https://github.com/Adityawisie/Flappy-Bird",
       gameLink: "https://adityawisie.itch.io/flappy-bird"
